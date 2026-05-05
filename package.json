@@ -1,0 +1,54 @@
+{
+  "name": "@feedsquad/cli",
+  "version": "0.1.0",
+  "description": "FeedSquad CLI — voice-match, draft, schedule, and publish social posts in your calibrated brand voice. The agent-distribution surface for FeedSquad.",
+  "license": "MIT",
+  "homepage": "https://feedsquad.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Feedsquad/feedsquad-agent.git"
+  },
+  "bugs": "https://github.com/Feedsquad/feedsquad-agent/issues",
+  "keywords": [
+    "feedsquad",
+    "social-media",
+    "linkedin",
+    "twitter",
+    "threads",
+    "scheduling",
+    "brand-voice",
+    "mcp",
+    "agent",
+    "claude",
+    "claude-skill",
+    "claude-plugin"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "module",
+  "bin": {
+    "feedsquad": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist/",
+    "SKILL.md",
+    "claude-plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
+    "watch": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

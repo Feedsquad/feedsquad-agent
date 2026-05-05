@@ -1,0 +1,73 @@
+{
+  "$schema": "https://claude.com/schemas/plugin/v1.json",
+  "name": "feedsquad",
+  "version": "0.1.0",
+  "description": "Voice-match, draft, schedule, and publish social posts in your calibrated brand voice. Wraps the FeedSquad CLI + MCP.",
+  "author": {
+    "name": "FeedSquad",
+    "email": "hello@feedsquad.com",
+    "url": "https://feedsquad.com"
+  },
+  "license": "MIT",
+  "homepage": "https://feedsquad.com/mcp",
+  "repository": "https://github.com/feedsquad/feedsquad-agent",
+  "keywords": [
+    "social-media",
+    "linkedin",
+    "twitter",
+    "x",
+    "threads",
+    "instagram",
+    "scheduling",
+    "brand-voice",
+    "marketing",
+    "content-calendar",
+    "agent-distribution"
+  ],
+  "skills": [
+    {
+      "path": "SKILL.md"
+    }
+  ],
+  "mcp_servers": [
+    {
+      "name": "feedsquad",
+      "type": "remote",
+      "url": "https://feedsquad.com/api/mcp",
+      "auth": {
+        "type": "oauth2",
+        "authorization_url": "https://feedsquad.com/api/oauth/mcp/authorize",
+        "token_url": "https://feedsquad.com/api/oauth/mcp/token",
+        "scopes": [
+          "posts:read",
+          "posts:write",
+          "posts:publish",
+          "campaigns:read",
+          "campaigns:write",
+          "connections:write",
+          "analytics:read"
+        ]
+      }
+    }
+  ],
+  "prerequisites": {
+    "binaries": [
+      {
+        "name": "feedsquad",
+        "install_hint": "npm install -g @feedsquad/cli",
+        "version_command": "feedsquad --version",
+        "min_version": "0.1.0"
+      }
+    ]
+  },
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "api_base": {
+        "type": "string",
+        "description": "Override the FeedSquad server URL (for self-hosted or staging).",
+        "default": "https://feedsquad.com"
+      }
+    }
+  }
+}
