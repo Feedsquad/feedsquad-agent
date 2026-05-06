@@ -1,0 +1,13 @@
+{
+  "name": "feedsquad",
+  "version": "0.1.0",
+  "description": "Voice-match, draft, schedule, and publish social posts in your calibrated brand voice across LinkedIn, X, Threads, and Instagram. Wraps the FeedSquad MCP and CLI.",
+  "author": {
+    "name": "FeedSquad",
+    "email": "hello@feedsquad.com",
+    "url": "https://feedsquad.com"
+  },
+  "license": "MIT",
+  "homepage": "https://feedsquad.com/mcp",
+  "repository": "https://github.com/Feedsquad/feedsquad-agent"
+}

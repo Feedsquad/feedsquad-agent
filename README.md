@@ -346,14 +346,14 @@ Campaign posts are created as drafts requiring approval. The CLI deliberately do
 
 ## Use from Claude Code / Cowork / OpenClaw
 
-This package ships a [`SKILL.md`](./SKILL.md) and a [`claude-plugin.json`](./claude-plugin.json) so any Claude-compatible agent runtime can install the skill in one command:
+This package ships a Claude Plugin layout — [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json), [`.mcp.json`](./.mcp.json), and [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) — so any Claude-compatible agent runtime can install the skill in one command:
 
 ```bash
 # In Claude Code
 /plugin install feedsquad
 ```
 
-The skill description leads with **voice-match** and tells the agent when to invoke each command. Read [`SKILL.md`](./SKILL.md) for the full agent-facing documentation.
+The skill description leads with **voice-match** and tells the agent when to invoke each command. Read [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) for the full agent-facing documentation.
 
 The Anthropic Plugin Directory listing will live at <https://claude.com/plugins/feedsquad>.
 

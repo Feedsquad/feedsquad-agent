@@ -1,14 +1,17 @@
 ---
 name: feedsquad
 description: |
-  Rewrite text in the operator's calibrated brand voice using the
-  FeedSquad brand context. Also schedules and publishes voice-matched posts across LinkedIn,
-  X, Instagram, and Threads. Use when the user asks to write "in our voice",
-  "as me", "on-brand", "in [name]'s style", or to schedule, publish, audit,
-  or analyze social content. Use voice-match for any text rewriting; use
-  post draft to generate a calibrated post from an idea; use post create to
-  schedule literal text. The skill calls the FeedSquad CLI which proxies to
-  the FeedSquad API at /api/mcp/action.
+  Rewrite text in the operator's calibrated brand voice. Also schedules
+  and publishes voice-matched posts across LinkedIn, X, Threads, and
+  Instagram via the FeedSquad CLI and MCP. Use voice-match for any text
+  rewriting; use post draft to generate a calibrated post from an idea;
+  use post create to schedule literal text.
+when_to_use: |
+  Use when the user asks to write "in our voice", "as me", "on-brand",
+  "in [name]'s style", to draft / schedule / publish / approve / delete
+  social posts, to audit a content calendar, to analyze post performance,
+  or to plan a week of posts. Do not trigger for non-social copy
+  (websites, emails, replies in non-FeedSquad channels).
 ---
 
 # FeedSquad

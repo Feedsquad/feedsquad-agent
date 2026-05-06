@@ -33,8 +33,6 @@
   "main": "./dist/cli.js",
   "files": [
     "dist/",
-    "SKILL.md",
-    "claude-plugin.json",
     "README.md",
     "LICENSE"
   ],
