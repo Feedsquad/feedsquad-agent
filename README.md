@@ -346,7 +346,7 @@ Campaign posts are created as drafts requiring approval. The CLI deliberately do
 
 ## Use from Claude Code / Cowork / OpenClaw
 
-This package ships a Claude Plugin layout — [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json), [`.mcp.json`](./.mcp.json), and [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) — so any Claude-compatible agent runtime can install the skill in one command:
+**This GitHub repository** ships a Claude Plugin layout — [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json), [`.mcp.json`](./.mcp.json), and [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) — so any Claude-compatible agent runtime can install the skill from this repo in one command. (The npm package only ships the CLI binary; the skill files live in the GitHub repo, not the npm tarball.)
 
 ```bash
 # In Claude Code
