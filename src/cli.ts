@@ -48,7 +48,7 @@ import { dim, bold, printError } from './format.js';
 
 const VERSION = '0.1.0';
 
-const HELP = `${bold('feedsquad')} ${dim(`v${VERSION}`)}  ${dim('— FeedSquad CLI for the agent-distribution channel.')}
+const HELP = `${bold('feedsquad')} ${dim(`v${VERSION}`)}  ${dim('— FeedSquad CLI for agent workflows.')}
 
 ${bold('Voice')}
   feedsquad voice-match "<text>"         Rewrite text in your calibrated brand voice
@@ -86,7 +86,7 @@ ${bold('Campaigns')}
 ${bold('Calendar + intelligence')}
   feedsquad calendar                     Calendar overview
     [--from <date>] [--to <date>] [--platform <p>] [--status <s>] [--limit <n>] [--json]
-  feedsquad context show [section]       Show your operator context (Stash proxy, v0.1 stub)
+  feedsquad context show [section]       Show your account and brand-context status
   feedsquad health                       Calendar-health audit (clusters, gaps, drift)
     [--lookback <days>] [--lookahead <days>] [--platform <p>] [--json]
   feedsquad insights                     Performance insights with LLM summary
@@ -240,7 +240,7 @@ async function dispatch(argv: string[]): Promise<number> {
       return 2;
     }
 
-    // ---- Voice-match — the wedge command ----
+    // ---- Voice-match — the lead command ----
     case 'voice-match':
     case 'voice': {
       return (await withProfile(profileName, (creds) =>
@@ -252,7 +252,7 @@ async function dispatch(argv: string[]): Promise<number> {
       )) as number;
     }
 
-    // ---- Context (Stash proxy stub) ----
+    // ---- Context status ----
     case 'context': {
       const sub = rest[0];
       if (sub !== 'show' && sub !== undefined) {

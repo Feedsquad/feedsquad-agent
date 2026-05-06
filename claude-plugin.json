@@ -65,7 +65,7 @@
     "properties": {
       "api_base": {
         "type": "string",
-        "description": "Override the FeedSquad server URL (for self-hosted or staging).",
+        "description": "Override the FeedSquad server URL (for an alternate FeedSquad environment).",
         "default": "https://feedsquad.com"
       }
     }

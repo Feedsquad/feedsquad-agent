@@ -32,9 +32,7 @@ sounds like every other post. This one sounds like the person writing
 it. That's the whole bet.
 ```
 
-The wedge is that **the voice context is invisible to the agent calling this command**. An LLM running `feedsquad voice-match "..."` doesn't need to be told who you are, how you write, or what your audience cares about. The server knows. The output sounds like you.
-
-This is the unique-to-FeedSquad agent primitive — no other social-publishing CLI ships it today.
+The core capability is that **the voice context is invisible to the agent calling this command**. An LLM running `feedsquad voice-match "..."` doesn't need to be told who you are, how you write, or what your audience cares about. The server knows. The output sounds like you.
 
 ---
 
@@ -92,7 +90,7 @@ Run `feedsquad help` for the full command list.
 
 ## Commands
 
-Every command supports `--profile <name>` for multi-account use, `--api-base <url>` for self-hosted, and `--json` for machine-readable output where applicable.
+Every command supports `--profile <name>` for multi-account use, `--api-base <url>` for an alternate FeedSquad environment, and `--json` for machine-readable output where applicable.
 
 ### voice-match
 
@@ -357,7 +355,7 @@ This package ships a [`SKILL.md`](./SKILL.md) and a [`claude-plugin.json`](./cla
 
 The skill description leads with **voice-match** and tells the agent when to invoke each command. Read [`SKILL.md`](./SKILL.md) for the full agent-facing documentation.
 
-The Anthropic Plugin Directory listing lives at <https://claude.com/plugins/feedsquad> *(submission in progress)*.
+The Anthropic Plugin Directory listing will live at <https://claude.com/plugins/feedsquad>.
 
 ---
 
@@ -401,14 +399,20 @@ Profiles share the credentials file. `whoami` shows the active profile and lists
 
 ---
 
-## Self-hosted / staging
+## Custom API base
+
+Point the CLI at an alternate FeedSquad environment by setting an env var:
 
 ```bash
-export FEEDSQUAD_API_BASE=https://staging.example.com
+export FEEDSQUAD_API_BASE=https://your-feedsquad-env.example.com
 feedsquad login
 ```
 
-Or per-call: `feedsquad --api-base https://localhost:3000 calendar`.
+Or pass `--api-base` per call:
+
+```bash
+feedsquad --api-base https://your-feedsquad-env.example.com calendar
+```
 
 ---
 

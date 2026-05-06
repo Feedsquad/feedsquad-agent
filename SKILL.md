@@ -1,8 +1,8 @@
 ---
 name: feedsquad
 description: |
-  Rewrite text in the operator's calibrated brand voice using the FeedSquad
-  Stash. Also schedules and publishes voice-matched posts across LinkedIn,
+  Rewrite text in the operator's calibrated brand voice using the
+  FeedSquad brand context. Also schedules and publishes voice-matched posts across LinkedIn,
   X, Instagram, and Threads. Use when the user asks to write "in our voice",
   "as me", "on-brand", "in [name]'s style", or to schedule, publish, audit,
   or analyze social content. Use voice-match for any text rewriting; use
@@ -44,11 +44,11 @@ feedsquad voice-match "<any text>"
 
 Use this when the user pastes a draft, an email, an old post, an article,
 notes from a call — anything they want to sound like *them*. The voice
-context lives in their FeedSquad Stash; you don't pass it, the server
-applies it.
+context lives in their FeedSquad brand context; you don't pass it, the
+server applies it.
 
-If the result reads generic, run `feedsquad context show` first — Stash
-may not yet be populated for this account.
+If the result reads generic, run `feedsquad context show` first — the
+brand context may not yet be populated for this account.
 
 ## Authentication
 

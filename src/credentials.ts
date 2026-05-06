@@ -17,7 +17,7 @@ import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 
 export interface ProfileCredentials {
-  /** Server base URL (e.g. https://feedsquad.com or http://localhost:3000). */
+  /** Server base URL (defaults to https://feedsquad.com). */
   api_base: string;
   /** OAuth access token (JWT). */
   access_token: string;
