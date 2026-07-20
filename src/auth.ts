@@ -10,7 +10,7 @@
  *  4. Exchange the code at /api/oauth/mcp/token using PKCE verifier.
  *  5. Save tokens to the local credentials file.
  *
- * No client_secret. The CLI is a public client per OAuth 2.1 §9.4 —
+ * No client_secret. The CLI is a public client per OAuth 2.1 §9.4 -
  * PKCE is the proof. This matches what Claude Desktop and other MCP
  * clients use against the same endpoints.
  */
@@ -45,9 +45,11 @@ function makePkcePair(): { verifier: string; challenge: string } {
 
 function openBrowser(url: string): void {
   const platform = process.platform;
-  const cmd = platform === 'darwin' ? 'open' : platform === 'win32' ? 'start' : 'xdg-open';
-  const args = platform === 'win32' ? ['', url] : [url];
-  spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref();
+  const cmd = platform === 'darwin' ? 'open' : platform === 'win32' ? 'rundll32.exe' : 'xdg-open';
+  const args = platform === 'win32' ? ['url.dll,FileProtocolHandler', url] : [url];
+  const child = spawn(cmd, args, { detached: true, stdio: 'ignore' });
+  child.on('error', () => undefined);
+  child.unref();
 }
 
 interface CallbackResult {
@@ -92,7 +94,7 @@ function awaitCallback(port: number, expectedState: string): Promise<CallbackRes
         return;
       }
       if (state !== expectedState) {
-        respond(400, '<!doctype html><meta charset=utf-8><body>State mismatch — possible CSRF. Aborted.</body>');
+        respond(400, '<!doctype html><meta charset=utf-8><body>State mismatch - possible CSRF. Aborted.</body>');
         cleanup();
         reject(new Error('OAuth state mismatch.'));
         return;
@@ -108,7 +110,7 @@ function awaitCallback(port: number, expectedState: string): Promise<CallbackRes
 
     const timer = setTimeout(() => {
       cleanup();
-      reject(new Error('OAuth timeout — no callback received in 5 minutes.'));
+      reject(new Error('OAuth timeout - no callback received in 5 minutes.'));
     }, AUTH_TIMEOUT_MS);
 
     function cleanup() {

@@ -1,6 +1,6 @@
 # @feedsquad/cli
 
-> Voice-match, draft, schedule, and publish social posts in your calibrated brand voice — from your terminal, or from any AI agent that can run a shell command.
+> Voice-match, draft, schedule, and publish social posts in your calibrated brand voice - from your terminal, or from any AI agent that can run a shell command.
 
 ```bash
 npm install -g @feedsquad/cli
@@ -10,11 +10,11 @@ feedsquad voice-match "the new pricing is live. lmk what you think"
 
 ---
 
-## voice-match — the command this CLI exists for
+## voice-match - the command this CLI exists for
 
-Most AI tools sound the same. Generic AI voice has a tell — vague concrete, certain abstract, no friction. Your voice has friction. `voice-match` keeps it.
+Most AI tools sound the same. Generic AI voice has a tell - vague concrete, certain abstract, no friction. Your voice has friction. `voice-match` keeps it.
 
-It takes any text — a draft, an email, an old post, scratch notes from a call — and rewrites it in your calibrated brand voice from your FeedSquad account. The voice context lives server-side. You pass only the text.
+It takes any text - a draft, an email, an old post, scratch notes from a call - and rewrites it in your calibrated brand voice from your FeedSquad account. The voice context lives server-side. You pass only the text.
 
 **Before:**
 
@@ -27,7 +27,7 @@ the AI voice is so generic and now it sounds like me"
 
 ```
 ── voice-matched ──
-We shipped voice-match today. Generic AI voice has a tell — every post
+We shipped voice-match today. Generic AI voice has a tell - every post
 sounds like every other post. This one sounds like the person writing
 it. That's the whole bet.
 ```
@@ -45,7 +45,7 @@ Specifically:
 - You already use Claude Code, Cowork, OpenClaw, or another AI agent runtime
 - You publish to LinkedIn, X, Threads, or Instagram
 - You want the agent to draft and schedule on your behalf, but in *your* voice
-- You'd rather review-and-approve than auto-publish — agents propose, you commit
+- You'd rather review-and-approve than auto-publish - agents propose, you commit
 - You're allergic to AI tools that turn every post into the same five-paragraph LinkedIn essay
 
 **It's not for:**
@@ -66,14 +66,14 @@ pnpm add -g @feedsquad/cli
 bun add -g @feedsquad/cli
 ```
 
-Requires **Node 20+**. Zero runtime dependencies — built on Node built-ins (`fetch`, `parseArgs`, `crypto`, `http`). No npm tree to audit.
+Requires **Node 20+**. Zero runtime dependencies - built on Node built-ins (`fetch`, `parseArgs`, `crypto`, `http`). No npm tree to audit.
 
 ---
 
 ## Quick start
 
 ```bash
-# 1. Authenticate once — opens your browser for OAuth 2.1 PKCE
+# 1. Authenticate once - opens your browser for OAuth 2.1 PKCE
 feedsquad login
 
 # 2. Rewrite any text in your brand voice
@@ -102,7 +102,7 @@ they all sound the same"
 
 ── voice-matched ──
 Most AI marketing posts fail for the same reason: they all sound the
-same. Generic AI voice has a tell — vague concrete, certain abstract,
+same. Generic AI voice has a tell - vague concrete, certain abstract,
 no friction. The question worth asking is whether your tools can
 preserve yours.
 ```
@@ -117,7 +117,7 @@ feedsquad voice-match "<text>" --json         # raw response
 
 ### post draft
 
-Generate a calibrated draft from an idea. Two-call flow under the hood (calibrate → save) — invisible to you.
+Generate a calibrated draft from an idea. Two-call flow under the hood (calibrate → save) - invisible to you.
 
 ```
 $ feedsquad post draft "the one thing about hiring nobody tells you" \
@@ -185,7 +185,7 @@ $ feedsquad post approve pst_8f3a92b1
 
 ### post publish
 
-Publish immediately (asks to confirm — destructive, goes live).
+Publish immediately (asks to confirm - destructive, goes live).
 
 ```
 $ feedsquad post publish pst_8f3a92b1
@@ -194,7 +194,7 @@ $ feedsquad post publish pst_8f3a92b1
   URL: https://www.linkedin.com/feed/update/urn:li:share:7194...
 ```
 
-The publish flow is **idempotent server-side** — retries replay the cached response instead of double-posting. Safe to call from agent loops.
+The publish flow is **idempotent server-side** - retries replay the cached response instead of double-posting. Safe to call from agent loops.
 
 Pass `--dry-run` to validate without going live.
 
@@ -209,7 +209,7 @@ $ feedsquad post delete pst_8f3a92b1 --yes
 
 ### post adapt
 
-Take one draft, get platform-tuned versions for each platform in one call. Returns adaptations only — does not save.
+Take one draft, get platform-tuned versions for each platform in one call. Returns adaptations only - does not save.
 
 ```
 $ feedsquad post adapt "we shipped voice-match today" \
@@ -222,10 +222,10 @@ sounds like you.
 ── in linkedin (412 chars) ──
 We shipped voice-match today.
 
-Generic AI voice has a tell — every post...
+Generic AI voice has a tell - every post...
 
 ── @ threads (188 chars) ──
-We shipped voice-match today. Generic AI voice has a tell — every post
+We shipped voice-match today. Generic AI voice has a tell - every post
 sounds like every other post. This one sounds like you. What's a tool
 you wish kept your voice?
 ```
@@ -250,7 +250,7 @@ pst_8f3a92b1  in    ◐ scheduled   2026-05-12 09:00  The one thing about hiring
 
 ### health
 
-Calendar-health audit — clusters, gaps, stale drafts, cadence drift. Call this before approving a campaign or scheduling a heavy week.
+Calendar-health audit - clusters, gaps, stale drafts, cadence drift. Call this before approving a campaign or scheduling a heavy week.
 
 ```
 $ feedsquad health
@@ -297,7 +297,7 @@ What worked
 
 Next angle
   Write the post that finishes the sentence "The thing nobody tells
-  you about <X> is..." — for X, use the topic that's been most on
+  you about <X> is..." - for X, use the topic that's been most on
   your mind this week.
 ```
 
@@ -325,7 +325,7 @@ Account state
 ### Auth
 
 ```bash
-feedsquad login                       # OAuth 2.1 PKCE — opens browser
+feedsquad login                       # OAuth 2.1 PKCE - opens browser
 feedsquad logout                      # Remove this profile's credentials
 feedsquad whoami                      # Show profile + scopes + caller-id
 feedsquad auth login|logout|status    # Aliases for the above
@@ -346,7 +346,7 @@ Campaign posts are created as drafts requiring approval. The CLI deliberately do
 
 ## Use from Claude Code / Cowork / OpenClaw
 
-**This GitHub repository** ships a Claude Plugin layout — [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json), [`.mcp.json`](./.mcp.json), and [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) — so any Claude-compatible agent runtime can install the skill from this repo in one command. (The npm package only ships the CLI binary; the skill files live in the GitHub repo, not the npm tarball.)
+**This GitHub repository** ships a Claude Plugin layout - [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json), [`.mcp.json`](./.mcp.json), and [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) - so any Claude-compatible agent runtime can install the skill from this repo in one command. (The npm package only ships the CLI binary; the skill files live in the GitHub repo, not the npm tarball.)
 
 ```bash
 # In Claude Code
@@ -356,6 +356,34 @@ Campaign posts are created as drafts requiring approval. The CLI deliberately do
 The skill description leads with **voice-match** and tells the agent when to invoke each command. Read [`skills/feedsquad/SKILL.md`](./skills/feedsquad/SKILL.md) for the full agent-facing documentation.
 
 The Anthropic Plugin Directory listing will live at <https://claude.com/plugins/feedsquad>.
+
+### Optional X/Twitter source context
+
+FeedSquad does not browse social platforms. If an agent needs current X/Twitter
+evidence before drafting, install TweetClaw as a separate OpenClaw plugin:
+
+```bash
+openclaw plugins install clawhub:@xquik/tweetclaw
+openclaw plugins inspect tweetclaw --runtime
+```
+
+ClawHub is the preferred tracked update source. Use
+`openclaw plugins install npm:@xquik/tweetclaw` as the npm fallback.
+
+Use TweetClaw for reviewed source inputs such as search tweets, search tweet
+replies, user lookup, follower export summaries, media references, monitor
+digests, webhook event summaries, and giveaway evidence. Pass only reviewed
+tweet URLs, tweet IDs, handles, quotes, and notes into `feedsquad voice-match`,
+`feedsquad post draft`, or `feedsquad post adapt`.
+
+FeedSquad still owns brand voice, drafts, approvals, scheduling, publishing,
+analytics, and calendar health. Keep TweetClaw write-like actions such as post
+tweets, replies, DMs, follows, account changes, monitor creation, webhook setup,
+media uploads, or giveaway draws inside OpenClaw/TweetClaw with their own review
+step before they run.
+
+TweetClaw is powered by Xquik. Xquik is an independent third-party service.
+Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ---
 
@@ -380,7 +408,7 @@ The Anthropic Plugin Directory listing will live at <https://claude.com/plugins/
 
 - **Auth**: OAuth 2.1 + PKCE against `/api/oauth/mcp/{authorize,token}`. No client secret. Tokens stored at `$XDG_CONFIG_HOME/feedsquad/credentials` (mode 0600). Auto-refresh 30s before expiry.
 - **Caller identity**: every request carries `X-MCP-Caller-Id` so server-side audit logs distinguish CLI usage from Claude Desktop, ChatGPT, and other clients hitting the same account.
-- **Idempotency**: the publish flow is idempotent server-side via a publishing-status state machine. Retries replay the cached response — safe to call from agent loops without double-posting.
+- **Idempotency**: the publish flow is idempotent server-side via a publishing-status state machine. Retries replay the cached response - safe to call from agent loops without double-posting.
 - **Recovery hints**: every error response carries a structured `recovery_hint` field naming the next tool to call. Agents can self-recover without bothering you.
 
 ---
@@ -432,4 +460,4 @@ Issues and pull requests welcome at <https://github.com/Feedsquad/feedsquad-agen
 
 ## License
 
-MIT © FeedSquad — see [LICENSE](./LICENSE).
+MIT © FeedSquad - see [LICENSE](./LICENSE).
