@@ -1,3 +1,5 @@
+> **Archived (2026-10-22).** This repository is no longer maintained. The FeedSquad plugin for Claude and ChatGPT lives at [Feedsquad/feedsquad-plugin](https://github.com/Feedsquad/feedsquad-plugin). Connector docs: [feedsquad.com/docs/mcp](https://feedsquad.com/docs/mcp). The MCP server runs at `https://feedsquad.com/api/mcp`.
+
 # @feedsquad/cli
 
 > Voice-match, draft, schedule, and publish social posts in your calibrated brand voice — from your terminal, or from any AI agent that can run a shell command.
